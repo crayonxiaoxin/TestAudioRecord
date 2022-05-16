@@ -1,6 +1,7 @@
 package com.github.crayonxiaoxin.test_audio_record
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.*
 import androidx.appcompat.app.AppCompatActivity
@@ -62,6 +63,11 @@ class MainActivity : AppCompatActivity() {
         val play = findViewById<MaterialButton>(R.id.play)
         play.setOnClickListener {
             playRecord()
+        }
+
+        val nfc = findViewById<MaterialButton>(R.id.nfc)
+        nfc.setOnClickListener {
+            startActivity(Intent(this, NfcActivity::class.java))
         }
     }
 
