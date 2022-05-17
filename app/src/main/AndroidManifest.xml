@@ -17,6 +17,17 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="*/*" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <!--使用这个过滤器 这里其实还要用 meta-data 配置一下标签过滤，-->
+                <!--我项目中是 NDEF_DISCOVERED 这个TECH_DISCOVERED形同虚设-->
+            </intent-filter>
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech" />
         </activity>
         <activity
             android:name=".MainActivity"
